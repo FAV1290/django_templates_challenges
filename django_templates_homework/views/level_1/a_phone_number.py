@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpRequest
 from django.shortcuts import render
 
 
@@ -9,11 +9,12 @@ from django.shortcuts import render
 Задания:
     1. Откройте страницу http://127.0.0.1:8000/phone-number/ и посмотрите на результат вывода.
     2. Используйте функцию render, чтобы вьюха вовращала ответ с темплэйтом level_1/phone_number.html
-    3. Снова откройте страницу http://127.0.0.1:8000/phone-number/ , вывод результат должен быть таким же, что и изначально.
+    3. Снова откройте страницу http://127.0.0.1:8000/phone-number/ ,
+       вывод результат должен быть таким же, что и изначально.
 """
 
 
-def get_phone_number_view(request):
+def get_phone_number_view(request: HttpRequest) -> HttpResponse:
     phone_number = '+79848522383'
 
     return render(request, 'level_1/phone_number.html', context={'phone_number': phone_number})
