@@ -6,7 +6,7 @@ SECRET_KEY = 'django-insecure-*)+t%03#fju9sr4y21y@1sksrh&n$wz7nlkli2hays1y2z59oq
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS: list[str] = []
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -15,6 +15,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_templates_homework'
 ]
 
 MIDDLEWARE = [

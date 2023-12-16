@@ -19,19 +19,19 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope="row">Jack</th>
-              <td>✅</td>
-              <td>✅</td>
-              <td>❌</td>
-            </tr>
-            <tr>
-              <th scope="row">Jill</th>
-              <td>❌</td>
-              <td>❌</td>
-              <td>✅</td>
-            </tr>
-          </tbody>
+            {% for item in performances %}
+              <tr>
+                <th scope="row">{{ item.student_name }}</th>
+                <td>{% if item.week1_completed %} ✅ {% else %} ❌ {% endif %}</td>
+                <td>{% if item.week2_completed %} ✅ {% else %} ❌ {% endif%}</td>
+                <td>{% if item.week3_completed %} ✅ {% else %} ❌ {% endif%}</td>
+              </tr>
+            {% empty %}
+              <tr>
+                <th colspan="4" style="text-align: center;">Sorry, no students data found</th>
+              </tr>
+            {% endfor %}
+            </tbody>
         </table>
       </article>
     </main>
